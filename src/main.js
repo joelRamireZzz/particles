@@ -37,11 +37,14 @@ navigator.mediaDevices
   console.log("el video ya está listo, y el modelo ya está cargado");
   createParticles(100);
   window.addEventListener("resize", resizeCanvas);
-  setInterval(() => {
-  if (particulas.length < 400) {
+ const maxParticulas = window.innerWidth < 768 ? 50 : 400;
+
+setInterval(() => {
+  if (particulas.length < maxParticulas) {
     createParticle();
   }
 }, 100);
+
   predictWebcam();
 });
   })
@@ -70,8 +73,8 @@ navigator.mediaDevices
   particulas.forEach((p) => {
 
     // activar brillo
-    ctx.shadowBlur = 5;
-    ctx.shadowColor = manoAbierta ? "orange" : "cyan";
+    //ctx.shadowBlur = 5;
+   // ctx.shadowColor = manoAbierta ? "orange" : "cyan";
     ctx.beginPath();
     const escala = 1 + p.z;
     ctx.arc(
