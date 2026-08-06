@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Tracker</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head><body>
+
+<div class="canvaas">
+    <video id="video" autoplay muted></video>
+    <canvas id="canvas"></canvas>
+
+    <div id="hud">
+
+    <h3>HAND PARTICLE SYSTEM</h3>
+
+    <div class="line">
+        FPS:
+        <span id="fps">0</span>
+    </div>
+
+    <div class="line">
+        Hands:
+        <span id="hands">0</span>
+    </div>
+
+    <div class="line">
+        Position:
+        <span id="position">0,0</span>
+    </div>
+
+</div>
+
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

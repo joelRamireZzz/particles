@@ -1,0 +1,82 @@
+body {
+    margin:0;
+    overflow:hidden;
+}
+
+video {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+canvas {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+#stats {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    color: white;
+    font-family: monospace;
+    font-size: 20px;
+
+    background: rgba(0,0,0,0.4);
+    padding: 10px;
+    border-radius: 10px;
+
+    z-index: 10;
+}
+
+#hud {
+
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    width: 200px;
+
+    padding: 5px;
+
+    background: rgba(0,0,0,0.45);
+
+    color:white;
+
+    font-family: monospace;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    border-radius: 15px;
+
+    backdrop-filter: blur(10px);
+
+    z-index: 20;
+
+}
+
+
+#hud h3 {
+
+    margin-top:0;
+
+    font-size:18px;
+
+}
+
+
+.line {
+
+    margin:8px 0;
+
+}
+
+
+span {
+
+    color:#00ffff;
+
+}
