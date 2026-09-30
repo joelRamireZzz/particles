@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Hand Tracker</title>
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Sistema de partículas controlado con las manos.">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/src/style.css">
+</head><body>
+
+    <video id="video" autoplay muted playsinline webkit-playsinline></video>
+    <canvas id="canvas"></canvas>
+
+    <div id="hud">
+
+    <h3>HAND PARTICLE SYSTEM</h3>
+
+    <div class="line">
+        FPS:
+        <span id="fps">0</span>
+    </div>
+
+    <div class="line">
+        Hands:
+        <span id="hands">0</span>
+    </div>
+
+    <div class="line">
+        Position:
+        <span id="position">0,0</span>
+    </div>
+
+</div>
+
+<div id="overlay" data-mode="loading" hidden>
+    <div class="panel">
+        <h4 id="overlay-title">Cargando…</h4>
+        <p id="overlay-hint"></p>
+        <button id="retry" type="button" hidden>Reintentar</button>
+    </div>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

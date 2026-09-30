@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+body {
+    font-family: monospace;
+    color: #fff;
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+}
+
+video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    object-fit: cover;
+    background: #000;
+    transform: scaleX(-1);
+    pointer-events: none;
+}
+
+canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    display: block;
+}
+
+#hud {
+    position: fixed;
+    top: max(20px, env(safe-area-inset-top));
+    left: max(20px, env(safe-area-inset-left));
+
+    width: 200px;
+
+    padding: 5px;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    color: white;
+
+    font-family: monospace;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 15px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+#hud h3 {
+    margin-top: 0;
+
+    font-size: 18px;
+}
+
+.line {
+    margin: 8px 0;
+}
+
+span {
+    color: #00ffff;
+}
+
+#overlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+    box-sizing: border-box;
+
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    z-index: 30;
+}
+
+#overlay[hidden] {
+    display: none;
+}
+
+#overlay .panel {
+    max-width: 420px;
+    width: 100%;
+
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+
+    padding: 20px;
+
+    text-align: left;
+}
+
+#overlay h4 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #00ffff;
+}
+
+#overlay p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    white-space: pre-line;
+}
+
+#overlay[data-mode="loading"] .panel::before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin: 0 auto 14px;
+
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #00ffff;
+    border-radius: 50%;
+
+    animation: spin 0.9s linear infinite;
+}
+
+#overlay[data-mode="loading"] h4 {
+    text-align: center;
+}
+
+#overlay[data-mode="error"] h4 {
+    color: #ffa500;
+}
+
+#retry {
+    margin-top: 16px;
+    padding: 10px 18px;
+
+    font-family: monospace;
+    font-size: 15px;
+
+    color: #000;
+    background: #00ffff;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+#retry[hidden] {
+    display: none;
+}
+
+#retry:active {
+    transform: translateY(1px);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #overlay[data-mode="loading"] .panel::before {
+        animation-duration: 3s;
+    }
+}
