@@ -7,6 +7,7 @@ export const TUNING = {
 
   startParticles: 220,
   spawnEveryMs: 100,
+  
 
   particle: { baseRadius: 3, friction: 0.95, maxSpeed: 5 },
   attractRadius: 300,

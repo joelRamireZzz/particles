@@ -57,6 +57,7 @@ export class QualityManager {
     } else {
       this.stableUp = 0;
     }
+    
 
     if (next !== this.level) {
       this.level = next;

@@ -103,6 +103,7 @@ export class Renderer {
       ctx.moveTo(p.x + r, p.y);
       ctx.arc(p.x, p.y, r, 0, TAU);
     }
+    
 
     ctx.fillStyle = open ? COLORS.particleOpen : COLORS.particleIdle;
     ctx.fill();

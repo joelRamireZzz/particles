@@ -10,6 +10,7 @@ export class Hud {
     this.position = root.getElementById("position");
   }
 
+  
   update({ fps, hands, x, y }) {
     setText(this.fps, String(Math.round(fps)));
     setText(this.hands, String(hands));

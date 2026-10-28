@@ -189,6 +189,7 @@ export async function startCamera(video, { onEnded, onStatus } = {}) {
   return { stream, track };
 }
 
+
 export function stopCamera(stream) {
   stream?.getTracks().forEach((track) => track.stop());
 }

@@ -214,6 +214,7 @@ export class ParticleSystem {
       }
     }
   }
+  
 
   buildGrid() {
     this.grid.build(this.list, this.width, this.height);

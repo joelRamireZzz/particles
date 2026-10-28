@@ -6,6 +6,7 @@ import { QualityManager } from "./quality.js";
 import { Renderer } from "./renderer.js";
 import { createHandTracker, forcedDelegate, preloadModel, readHandState } from "./tracker.js";
 
+
 const BASE_PARTICLES = isCoarsePointer() ? 260 : 400;
 const FIXED_STEP = 1000 / TUNING.physicsHz;
 const STALLED_VIDEO_MS = 500;

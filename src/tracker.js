@@ -1,5 +1,6 @@
 import { ASSETS, TUNING } from "./config.js";
 
+
 const DEFAULT_DELEGATES = ["GPU", "CPU"];
 
 export function forcedDelegate() {
