@@ -12,7 +12,73 @@ body {
     overflow: hidden;
     overscroll-behavior: none;
 }
+/* loader*/
+/* From Uiverse.io by alexruix */ 
+.loader {
+  position: relative;
+  width: 120px;
+  height: 90px;
+  margin: 0 auto;
+}
 
+.loader:before {
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: #2a9d8f;
+  animation: loading-bounce 0.5s ease-in-out infinite alternate;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 7px;
+  width: 45px;
+  border-radius: 4px;
+  box-shadow: 0 5px 0 #f2f2f2, -35px 50px 0 #f2f2f2, -70px 95px 0 #f2f2f2;
+  animation: loading-step 1s ease-in-out infinite;
+}
+
+@keyframes loading-bounce {
+  0% {
+    transform: scale(1, 0.7);
+  }
+
+  40% {
+    transform: scale(0.8, 1.2);
+  }
+
+  60% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    bottom: 140px;
+  }
+}
+
+@keyframes loading-step {
+  0% {
+    box-shadow: 0 10px 0 rgba(0, 0, 0, 0),
+            0 10px 0 #f2f2f2,
+            -35px 50px 0 #f2f2f2,
+            -70px 90px 0 #f2f2f2;
+  }
+
+  100% {
+    box-shadow: 0 10px 0 #f2f2f2,
+            -35px 50px 0 #f2f2f2,
+            -70px 90px 0 #f2f2f2,
+            -70px 90px 0 rgba(0, 0, 0, 0);
+  }
+}
+/*loader end*/
 body {
     font-family: monospace;
     color: #fff;
@@ -116,10 +182,11 @@ span {
     padding: 20px;
 
     text-align: left;
+    
 }
 
 #overlay h4 {
-    margin: 0 0 10px;
+    margin: 20 0 10px;
     font-size: 18px;
     color: #00ffff;
 }
@@ -132,60 +199,10 @@ span {
     white-space: pre-line;
 }
 
-#overlay[data-mode="loading"] .panel::before {
-    content: "";
-    display: block;
-    width: 28px;
-    height: 28px;
-    margin: 0 auto 14px;
-
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    border-top-color: #00ffff;
-    border-radius: 50%;
-
-    animation: spin 0.9s linear infinite;
-}
-
 #overlay[data-mode="loading"] h4 {
     text-align: center;
 }
 
 #overlay[data-mode="error"] h4 {
     color: #ffa500;
-}
-
-#retry {
-    margin-top: 16px;
-    padding: 10px 18px;
-
-    font-family: monospace;
-    font-size: 15px;
-
-    color: #000;
-    background: #00ffff;
-
-    border: none;
-    border-radius: 10px;
-
-    cursor: pointer;
-}
-
-#retry[hidden] {
-    display: none;
-}
-
-#retry:active {
-    transform: translateY(1px);
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    #overlay[data-mode="loading"] .panel::before {
-        animation-duration: 3s;
-    }
 }

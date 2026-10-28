@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Hand Tracker</title>
     <meta name="theme-color" content="#000000">
+    <link rel="icon" type="image/x-icon" href="/public/icon.png">
     <meta name="description" content="Sistema de partículas controlado con las manos.">
     <link rel="stylesheet" href="/src/style.css">
 </head><body>
-    
+
 
     <video id="video" autoplay muted playsinline webkit-playsinline></video>
     <canvas id="canvas"></canvas>
@@ -36,8 +37,9 @@
 
 <div id="overlay" data-mode="loading" hidden>
     <div class="panel">
+        <!-- From Uiverse.io by alexruix --> 
+        <div class="loader"></div>
         <h4 id="overlay-title">Cargando…</h4>
-        <p id="overlay-hint"></p>
         <button id="retry" type="button" hidden>Reintentar</button>
     </div>
 </div>
